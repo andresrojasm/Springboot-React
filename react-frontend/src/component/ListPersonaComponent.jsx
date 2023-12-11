@@ -1,19 +1,28 @@
 import React, { Component } from "react";
+import PersonaService from "../service/PersonaService";
 
 class ListPersonaComponent extends Component{
 
     constructor(props){
-        super(props)
+        super(props) 
         this.state = {
             personas: []
         }
+    }
+
+    componentDidMount(){
+        PersonaService.getPersonas().then((res) => {
+            this.setState(
+                {personas: res.data}
+            );
+        });
     }
 
     render(){
         return(
             <div>
                 <h2 className="text-center">Lista de Personas</h2>
-                <div>
+                <div className="row">
                     <table className="table table-striped table-bordered">
                         <thead>
                             <tr>
