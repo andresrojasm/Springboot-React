@@ -5,7 +5,6 @@ import FooterComponent from './component/FooterComponent';
 import HeaderComponent from './component/HeaderComponent';
 import { BrowserRouter as Router, Route, Routes } from 'react-router-dom'
 
-
 function App() {
   return (
     <div>
